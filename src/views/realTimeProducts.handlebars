@@ -1,0 +1,49 @@
+<h1 class="text-center">Formulario de subida de productos</h1> 
+<form id="addProductForm" class="ProductForm">
+    <p class="text-center">Ingresar los datos del producto:</p>
+    <div class="form-group">
+        <label for="title">Title:</label>
+        <input type="text" class="form-control" id="title" placeholder="A/A xxxxfr">
+    </div>
+    <div class="form-group">
+        <label for="description">Description:</label>
+        <input type="text" class="form-control" id="description" placeholder="Aire Acondicionado split xxxxfr F/C">
+    </div>
+    <div class="form-group">
+        <label for="price">Price:</label>
+        <input type="number" class="form-control" id="price" placeholder="50000">
+    </div>
+    <div class="form-group">
+        <label for="code">Code:</label>
+        <input type="text" class="form-control" id="code" placeholder="#125">
+    </div>
+    <div class="form-group">
+        <label for="stock">Stock:</label>
+        <input type="number" class="form-control" id="stock" placeholder="10">
+    </div>
+    <div class="form-group">
+        <label for="category">Category:</label>
+        <input type="text" class="form-control" id="category" placeholder="A/A">
+    </div>
+    <div>
+        <button type="submit" class="btn btn-primary" id="addProduct">Agregar</button>
+    </div>
+</form>
+<form id="deleteProductForm" class="ProductForm">
+    <p>Producto a eliminar</p>
+    <div class="form-group">
+        <label for="prodId">ID del producto:</label>
+        <input type="number" class="form-control" id="prodId" />
+    </div>
+    <button type="submit" class="btn btn-danger" id="deleteProduct">Eliminar</button>
+</form>
+<h2 class="text-center">Lista de productos en tiempo real:</h2>
+<div id="realTimeProducts" class="realTimeProducts">
+    {{#each products}}
+        <div id="productsFromServer"></div>
+    {{/each}}
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.6.0/socket.io.js" integrity="sha512-rwu37NnL8piEGiFhe2c5j4GahN+gFsIn9k/0hkRY44iz0pc81tBNaUN56qF8X4fy+5pgAAgYi2C9FXdetne5sQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="js/main.js"></script>
